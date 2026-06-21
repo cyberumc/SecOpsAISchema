@@ -74,3 +74,23 @@ The assistant is directed to fetch and apply the root `META_PROMPT.md` using the
   ```
 
 Once opened, the AI assistant will automatically read `META_PROMPT.md` first, adopt the Canary Status protocol (`[◈ Console Active | Status: Optimized & Connected]`), and follow all data sanitization, directory structure, and validation rules.
+
+---
+
+## 🔄 Development Workflow (How to Compile Skills & Personas)
+
+Follow this lifecycle to build and deploy capabilities dynamically:
+
+1. **Staging / Drop Zone**:
+   * For raw brainstorms, vendor PDFs, or logs: Save them in the `/ideation/` folder.
+   * For existing community repositories or external scripts: Clone or extract them into `/imported_skills/`.
+2. **Trigger Compilation**:
+   * Open your IDE chat assistant and command it: 
+     > *"Compile the [skill_name] from /imported_skills/ into a generic capability."*
+3. **Automatic Synthesis & Optimization**:
+   * The engine reads the staged assets and strips unnecessary boilerplate.
+   * Compiles the target capability directory inside `/skills/generic/` or `/skills/private/` matching the **Skill Compilation Standard**.
+   * Creates the Obsidian graph note in `/connections/` using the Connection Protocol.
+   * Registers the new capability in `manifest.json`.
+4. **Deployment**:
+   * Ask the assistant to generate a multi-agent routing persona in `/personas/` (e.g., using `crewai` or `langgraph`) that loads and executes the compiled capability.
