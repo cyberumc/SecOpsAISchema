@@ -1,0 +1,32 @@
+{
+  "project": "Universal Orchestration & Synthesis Engine",
+  "version": "3.0.0",
+  "description": "Autonomous Capability & Persona Generator",
+  "last_updated": "2026-06-21",
+  "capabilities": {
+    "generic_skills": {
+      "path": "skills/generic",
+      "description": "Sanitized, open-source friendly Threat Hunting and incident response skills."
+    },
+    "private_skills": {
+      "path": "skills/private",
+      "description": "Company-specific infrastructure automation and locked SecOps playbooks."
+    },
+    "perimeter_knowledge": {
+      "path": "perimeter_knowledge",
+      "description": "Atomic Markdown Flat-File RAG vault containing tribal knowledge & mappings."
+    },
+    "connections": {
+      "path": "connections",
+      "description": "Lightweight Obsidian markdown link nodes mapping dependencies and capabilities."
+    },
+    "personas": {
+      "path": "personas",
+      "description": "CrewAI / LangGraph multi-agent team roles and orchestration routines."
+    },
+    "scripts": {
+      "path": "scripts",
+      "description": "Token-saving CLI utilities for query routing and log/metadata filtering."
+    }
+  }
+}

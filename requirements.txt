@@ -1,0 +1,40 @@
+# ==========================================
+# 1. CORE DATA INGESTION & DOCUMENT PARSING
+# ==========================================
+# Converts any generic vendor PDF, HTML export, or policy manual into Markdown
+docling>=1.0.0
+
+# ==========================================
+# 2. LOCAL AGENT ORCHESTRATION & DELEGATION
+# ==========================================
+# The agnostic routing and cognitive framework for any multi-agent workflow
+crewai>=0.30.0
+langgraph>=0.0.60
+langchain-core>=0.2.0
+
+# ==========================================
+# 3. UNIVERSAL CYBERSECURITY CONTEXT
+# ==========================================
+# Provides generic, programmatic access to the MITRE ATT&CK framework
+pyattck>=7.0.0
+
+# Universal standards for tracking vulnerabilities and generic threat intelligence
+nvdlib>=0.7.6
+stix2>=3.0.1
+
+# ==========================================
+# 4. GENERIC SECURITY LOGIC TRANSLATION
+# ==========================================
+# Sigma is the universal, vendor-agnostic standard for detection engineering
+pysigma>=0.11.0
+sigma-cli>=0.7.0
+
+# ==========================================
+# 5. CORE UTILITIES & VALIDATION
+# ==========================================
+# Universal AST parser to check any generated Python logic for syntax errors
+tree-sitter>=0.21.0
+tree-sitter-python>=0.21.0
+
+# Essential environment management for local API keys
+python-dotenv>=1.0.1
