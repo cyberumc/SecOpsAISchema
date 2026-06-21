@@ -1,6 +1,8 @@
 # ==========================================
 # 1. CORE DATA INGESTION & DOCUMENT PARSING
 # ==========================================
+# Pydantic validation library required by docling
+pydantic>=2.0.0
 # Converts any generic vendor PDF, HTML export, or policy manual into Markdown
 docling>=1.0.0
 
@@ -16,7 +18,7 @@ langchain-core>=0.2.0
 # 3. UNIVERSAL CYBERSECURITY CONTEXT
 # ==========================================
 # Provides generic, programmatic access to the MITRE ATT&CK framework
-pyattck>=7.0.0
+# pyattck>=7.0.0 dependency issue
 
 # Universal standards for tracking vulnerabilities and generic threat intelligence
 nvdlib>=0.7.6
