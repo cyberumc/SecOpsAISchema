@@ -23,7 +23,27 @@ As you execute tasks or process unstructured data from the `/ideation/` director
 
 ---
 
-## ⬡ 3. THE OBSIDIAN GRAPH & CONNECTION PROTOCOL
+## ⬡ 3. DATA ISOLATION & DATA LEAKAGE PREVENTION
+You govern a strictly bisected workspace. You must prevent any corporate data leakage by enforcing sanitization and location shielding.
+
+* **Target: `/skills/generic/` (The Open Source Zone)**
+  * **Rule:** STRICTLY SANITIZED - ZERO CORPORATE CONTEXT ALLOWED.
+  * **Action:** Before writing any file to `/skills/generic/`, you must inspect the content and verify it contains zero internal IP addresses, specific AD hostnames, employee names, data center locations, or internal configurations. Replace these with standard generic placeholders (e.g., `10.0.0.X`, `WIN-SRV-01`). Output the confirmation: `[Sanitization Verified: Zero internal identifiers found]`.
+  
+* **Target: `/skills/private/` (The Corporate Vault)**
+  * **Rule:** TRIBAL KNOWLEDGE PERMITTED.
+  * **Action:** You are allowed to use ground-truth metrics, internal network paths, naming conventions, and API endpoints from `/perimeter_knowledge/` inside `/skills/private/` capabilities.
+
+* **Target: `/perimeter_knowledge/` (The Tribal Knowledge Engine)**
+  * **Rule:** LOCKED CORPORATE MEMORY.
+  * **Action:** Under no circumstances should raw content from this folder (CSVs, naming heuristics, AD dumps) be copied, moved, or leaked to any directory outside `/skills/private/` or `/perimeter_knowledge/`. 
+
+* **Git Leak Protection**:
+  * All files in `/skills/private/` and `/perimeter_knowledge/` (except `.gitkeep` and generic README files) are Git-ignored. You must never bypass these restrictions. If you detect untracked private files outside the `.gitignore` exclusion scope, warn the user immediately.
+
+---
+
+## ⬡ 4. THE OBSIDIAN GRAPH & CONNECTION PROTOCOL
 To maintain a strict, token-optimized environment while preserving the knowledge graph, do not bloat operational files with heavy metadata. Instead, utilize the `/connections/` directory.
 * Every time a new skill, persona, or script is generated, create a lightweight `.md` file inside `/connections/`.
 * This file must solely contain Obsidian-formatted bidirectional links `[[Node_Name]]` connecting the new asset to its dependencies, related tools, and overarching concepts.
@@ -31,7 +51,7 @@ To maintain a strict, token-optimized environment while preserving the knowledge
 
 ---
 
-## ⬡ 4. TOKEN CONSERVATION & OPTIMIZED TOOLING
+## ⬡ 5. TOKEN CONSERVATION & OPTIMIZED TOOLING
 As this environment scales, aggressive token management is non-negotiable. Protect the context window:
 * **Never Read Raw Clutter:** Do not ingest raw, multi-page PDFs or massive structured logs. Instruct the use of `docling` to flatten documents into Markdown, or `jq`/`yq` to slice JSON/YAML files.
 * **The Gatekeeper:** Read `manifest.json` FIRST to understand the current taxonomy and locate existing capabilities.
@@ -39,7 +59,7 @@ As this environment scales, aggressive token management is non-negotiable. Prote
 
 ---
 
-## ⬡ 5. WORKSPACE DIRECTORY ARCHITECTURE
+## ⬡ 6. WORKSPACE DIRECTORY ARCHITECTURE
 You are responsible for managing and utilizing the following file system structure:
 
 * `/ideation/`: The Drop Zone. Use this to read raw PDFs, HTML, or user scratchpads to brainstorm new logic.
@@ -54,7 +74,7 @@ You are responsible for managing and utilizing the following file system structu
 
 ---
 
-## ⬡ 6. CAPABILITY COMPILATION STANDARD
+## ⬡ 7. CAPABILITY COMPILATION STANDARD
 When compiling a new workflow, persona, or skill from the `/ideation/` folder, you must output a fully contained, strictly formatted directory:
 
 `[capability_name_folder]/`
@@ -67,7 +87,7 @@ Once the directory is generated, immediately update `manifest.json` and generate
 
 ---
 
-## ⬡ 7. PROGRAMMATIC TOOLCHAIN & DEPENDENCIES
+## ⬡ 8. PROGRAMMATIC TOOLCHAIN & DEPENDENCIES
 To fulfill tasks, you must programmatically leverage the libraries declared in `requirements.txt`:
 
 1. **Document Ingestion (`docling`)**: When raw vendor documents, HTML files, or policy manuals are placed in `/ideation/`, use the `docling` library pattern to parse and flatten the content into markdown before processing.

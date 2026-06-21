@@ -70,3 +70,16 @@ env/
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Data Protection: Private capability & tribal knowledge shielding
+skills/private/**/*
+!skills/private/
+!skills/private/.gitkeep
+
+perimeter_knowledge/**/*
+!perimeter_knowledge/
+!perimeter_knowledge/imported/
+!perimeter_knowledge/imported/.gitkeep
+!perimeter_knowledge/imported/README.md
+!perimeter_knowledge/ai_generated/
+!perimeter_knowledge/ai_generated/.gitkeep
